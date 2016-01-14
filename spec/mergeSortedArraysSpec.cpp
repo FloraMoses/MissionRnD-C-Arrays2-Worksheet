@@ -31,12 +31,12 @@ namespace spec
 		{
 			struct transaction A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
 			struct transaction B[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
-			//int A[3] = { 1, 2, 3 }, B[3] = { 1, 2, 3 };
+			//int A[3] = { 1, 2, 3 }, B[3] = { 1, 2, 3 }, C[6] = {1, 1, 2, 2, 3, 3};
 			struct transaction *result = mergeSortedArrays(A, 3, B, 3);
 			struct transaction expected[6] = { { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" }, { 30, "03-03-2005", "Third" } };
 			Assert::IsTrue(compare(result, expected, 6), L"Same arrays case failed.", LINE_INFO());
 
-			//int A1[3] = { 1, 1, 1 }, B1[3] = { 1, 1, 1 };
+			//int A1[3] = { 1, 1, 1 }, B1[3] = { 1, 1, 1 }, C[6] = {1, 1, 1, 1, 1, 1};
 			struct transaction A1[3] = { { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" } };
 			struct transaction B1[3] = { { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" }, { 10, "09-10-2003", "First" } };
 			struct transaction *result1 = mergeSortedArrays(A1, 3, B1, 3);
@@ -48,14 +48,14 @@ namespace spec
 		{
 			struct transaction A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
 			struct transaction B[3] = { { 40, "21-10-2006", "Fourth" }, { 50, "13-11-2007", "Fifth" }, { 60, "13-08-2008", "Sixth" } };
-			//int A[3] = { 1, 2, 3 }, B[3] = { 4, 5, 6 };
+			//int A[3] = { 1, 2, 3 }, B[3] = { 4, 5, 6 }, C[6] = {1, 2, 3, 4, 5, 6};
 			struct transaction *result = mergeSortedArrays(A, 3, B, 3);
 			struct transaction expected[6] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" }, { 40, "21-10-2006", "Fourth" }, { 50, "13-11-2007", "Fifth" }, { 60, "13-08-2008", "Sixth" } };
 			Assert::IsTrue(compare(result, expected, 6), L"Different arrays case failed.", LINE_INFO());
 
 			struct transaction A1[3] = { { 40, "21-10-2006", "Fourth" }, { 50, "13-11-2007", "Fifth" }, { 60, "13-08-2008", "Sixth" } };
 			struct transaction B1[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
-			//struct transaction A1[3] = { 4, 5, 6 }, B1[3] = { 1, 2, 3 };
+			//struct transaction A1[3] = { 4, 5, 6 }, B1[3] = { 1, 2, 3 }, C[6] = {1, 2, 3, 4, 5, 6};
 			struct transaction *result1 = mergeSortedArrays(A1, 3, B1, 3);
 			Assert::IsTrue(compare(result1, expected, 6), L"Different arrays case failed.", LINE_INFO());
 		}
@@ -64,14 +64,14 @@ namespace spec
 		{
 			struct transaction A[3] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" } };
 			struct transaction B[3] = { { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" }, { 60, "22-04-2006", "Sixth" } };
-			//int A[3] = { 1, 2, 3 }, B[3] = { 2, 3, 6 };
+			//int A[3] = { 1, 2, 3 }, B[3] = { 2, 3, 6 }, C[6] = {1, 2, 2, 3, 3, 6};
 			struct transaction *result = mergeSortedArrays(A, 3, B, 3);
 			struct transaction expected[6] = { { 10, "09-10-2003", "First" }, { 20, "19-10-2004", "Second" }, { 20, "19-10-2004", "Second" }, { 30, "03-03-2005", "Third" }, { 30, "03-03-2005", "Third" }, { 60, "22-04-2006", "Sixth" } };
 			Assert::IsTrue(compare(result, expected, 6), L"Different arrays case failed.", LINE_INFO());
 
 			struct transaction A1[3] = { { 40, "09-10-2003", "Fourth" }, { 60, "19-10-2004", "Sixth" }, { 80, "03-03-2005", "Eigth" } };
 			struct transaction B1[3] = { { 40, "09-10-2003", "Fourth" }, { 50, "19-10-2003", "Fifth" }, { 60, "19-10-2004", "Sixth" } };
-			//int A1[3] = { 4, 6, 8 }, B1[3] = { 4, 5, 6 };
+			//int A1[3] = { 4, 6, 8 }, B1[3] = { 4, 5, 6 }, C[6] = {4, 4, 5, 6, 6, 8};
 			struct transaction *result1 = mergeSortedArrays(A1, 3, B1, 3);
 			struct transaction expected1[6] = { { 40, "09-10-2003", "Fourth" }, { 40, "09-10-2003", "Fourth" }, { 50, "19-10-2003", "Fifth" }, { 60, "19-10-2004", "Sixth" }, { 60, "19-10-2004", "Sixth" }, { 80, "03-03-2005", "Eigth" } };
 			Assert::IsTrue(compare(result1, expected1, 6), L"Different arrays case failed.", LINE_INFO());
