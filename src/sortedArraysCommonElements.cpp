@@ -1,6 +1,6 @@
 /*
-OVERVIEW: You are given 2 bank statements that are ordered by date. Write a function that returns dates common
-to both statement (ie both statements have transactions in these dates).
+OVERVIEW: You are given 2 bank statements that are ordered by date. Write a function that returns 
+dates common to both statement (ie both statements have transactions in these dates).
 E.g.: Input: A[3] = { { 10, "09-10-2003", "First" }, 
                       { 20, "19-10-2004", "Second" }, 
                       { 30, "03-03-2005", "Third" } 
